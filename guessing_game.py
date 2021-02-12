@@ -32,16 +32,15 @@ def start_game():
         print("You are out of tries, better luck next time! The magic number was {}".format(ran_num))
     else:
       print("Winner winner chicken dinner! It took you {} attempts to get it.".format(10 - attempts_left))
-    try:
-      
-      play_again = str(input("Would you like to play again? Y/N").upper())
+    try:  
+        play_again = str(input("Would you like to play again? Y/N").upper())
+        if play_again == "Y":
+            print("Game on!")
+            start_game()
+        elif play_again == "N":
+            print("That was fun! Hope we play again soon!")
     except ValueError:
-           print("Please enter Y or N")
-    if play_again == "Y":
-        print("Game on!")
-        start_game()
-    elif play_again == "N":
-        print("That was fun! Hope we play again soon!")
+        print("Please enter Y or N")
 
 
 start_game()
